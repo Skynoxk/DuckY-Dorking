@@ -19,7 +19,7 @@ USER_AGENTS = [
 ]
 
 DORKS = [
-    'inurl:php?id=1 site:th'
+    'inurl:php?id=1 site:com' #You can add more parameter here
 ]
 
 def random_user_agent() -> str:
