@@ -23,6 +23,11 @@ Install dependencies:
 pip install requests beautifulsoup4
 ```
 
+OR
+
+```
+pip install -r requirement.txt
+```
 ## Usage
 
 Run the script directly:
@@ -55,7 +60,7 @@ Results for: inurl:php?id=1 site:th
 https://example.com/page?id=1
 https://another.example.th/item.php?id=1
 ...
-Total unique for 'inurl:php?id=1 site:th': 42
+Total unique for 'inurl:php?id=1 site:en': 42
 ----------------------------------------
 ```
 
