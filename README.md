@@ -109,3 +109,6 @@ run_multi(
 ## Legal and ethical notice
 
 Only use this tool for lawful purposes. Respect websites’ Terms of Service and robots.txt where applicable. You are responsible for how you use this code and the data it collects.
+
+## Reference
+Each request is made to 3 sec timeout: `https://datatracker.ietf.org/doc/html/rfc2988#:~:text=set%20RTO%20%3C%2D%203%20seconds`
