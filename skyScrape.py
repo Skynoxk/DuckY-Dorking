@@ -3,7 +3,7 @@ import random
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import (
-    urlparse, parse_qs, parse_qsl, unquote, urljoin,
+    urlparse, parse_qs, parse_qsl, urljoin,
     urlencode, urlunparse
 )
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -50,7 +50,9 @@ def decode_duckduckgo_href(href: str) -> str | None:
         qs = parse_qs(parsed.query)
         target = qs.get("uddg", [None])[0]
         if target:
-            return unquote(target)
+            # parse_qs already decodes the redirect's query parameter once.
+            # Decoding again changes escaped delimiters inside the target URL.
+            return target
 
     # Otherwise, if it's already a direct http(s) URL, return it
     if parsed.scheme in ("http", "https"):
