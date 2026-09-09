@@ -27,7 +27,7 @@ pip install requests beautifulsoup4
 
 Run the script directly:
 ```bash
-python path/to/your_script.py
+python skyScrape.py
 ```
 
 - You’ll be prompted whether to add a custom parameter (search query) or use the default defined in `DORKS`.
@@ -74,14 +74,14 @@ Total unique for 'inurl:php?id=1 site:th': 42
 You can also import and use the helpers in your own code:
 
 ```python
-from your_script import run_multi, run_once_for_dork, iter_duckduckgo_results, normalize_url
+from skyScrape import run_multi, run_engine_once, iter_duckduckgo_results, normalize_url
 
 # Stream results for a single query
 for url in iter_duckduckgo_results("inurl:login.php site:example.com", max_pages=5, pause=1.0):
     print(url)
 
 # Collect unique, normalized results in one run
-unique = run_once_for_dork("inurl:index.php?id= site:th", max_pages=6, page_pause=1.0)
+unique = run_engine_once("duckduckgo", "inurl:index.php?id= site:th", max_pages=6, page_pause=1.0)
 print(len(unique), "unique URLs")
 
 # Run multiple queries with repeats and timing controls
